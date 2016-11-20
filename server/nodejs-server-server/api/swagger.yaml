@@ -1,0 +1,199 @@
+---
+swagger: "2.0"
+info:
+  description: "教务管理，包括学生信息，成绩管理\n"
+  version: "1.0.0"
+  title: "Education Manage API"
+  contact:
+    name: "sessionliang"
+    email: "sessionliang@outlook.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+basePath: "/v1"
+schemes:
+- "http"
+- "https"
+paths:
+  /students/login:
+    post:
+      tags:
+      - "students"
+      summary: "student login"
+      description: ""
+      operationId: "studentsLoginPOST"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      parameters:
+      - name: "userName"
+        in: "formData"
+        description: "student' userName"
+        required: true
+        type: "string"
+      - name: "password"
+        in: "formData"
+        description: "student' password"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Successful Options"
+          schema:
+            $ref: "#/definitions/inline_response_200"
+        401:
+          description: "Login Fail"
+          schema:
+            $ref: "#/definitions/inline_response_401"
+      x-swagger-router-controller: "Students"
+  /students/registe:
+    post:
+      tags:
+      - "students"
+      summary: "student registe"
+      description: ""
+      operationId: "studentsRegistePOST"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      parameters:
+      - name: "userName"
+        in: "formData"
+        description: "student' userName"
+        required: true
+        type: "string"
+      - name: "password"
+        in: "formData"
+        description: "student' password"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Successful Options"
+          schema:
+            $ref: "#/definitions/inline_response_200"
+        401:
+          description: "Login Fail"
+          schema:
+            $ref: "#/definitions/inline_response_401"
+      x-swagger-router-controller: "Students"
+  /students/{id}:
+    get:
+      tags:
+      - "students"
+      summary: "get student info"
+      description: ""
+      operationId: "studentsIdGET"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "student Info"
+          schema:
+            $ref: "#/definitions/Student"
+      security:
+      - education_auth:
+        - "write_students"
+        - "read_students"
+      x-swagger-router-controller: "Students"
+    put:
+      tags:
+      - "students"
+      summary: "update student info"
+      description: ""
+      operationId: "studentsIdPUT"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "student' propertyies"
+        required: true
+        schema:
+          $ref: "#/definitions/Student"
+      responses:
+        200:
+          description: "Successful Options"
+      security:
+      - education_auth:
+        - "write_students"
+        - "read_students"
+      x-swagger-router-controller: "Students"
+    delete:
+      tags:
+      - "students"
+      summary: "delete student info"
+      description: ""
+      operationId: "studentsIdDELETE"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "api_key"
+        in: "header"
+        description: ""
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "student Info"
+      security:
+      - education_auth:
+        - "write_students"
+        - "read_students"
+      x-swagger-router-controller: "Students"
+securityDefinitions:
+  api_key:
+    type: "apiKey"
+    name: "api_Key"
+    in: "header"
+  education_auth:
+    type: "oauth2"
+    authorizationUrl: "http://test.swagger/api/oaurh/dialog"
+    flow: "implicit"
+    scopes:
+      write_students: "modify student in your accoutn"
+      read_students: "read you message"
+definitions:
+  Student:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      userName:
+        type: "string"
+      name:
+        type: "string"
+      email:
+        type: "string"
+      password:
+        type: "string"
+      phone:
+        type: "string"
+      userStatus:
+        type: "integer"
+        format: "int32"
+        description: "User Status"
+  inline_response_200:
+    properties:
+      userName:
+        type: "string"
+      token:
+        type: "string"
+  inline_response_401:
+    properties:
+      error:
+        type: "string"

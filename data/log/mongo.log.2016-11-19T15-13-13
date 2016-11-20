@@ -1,0 +1,31 @@
+2016-11-19T22:13:45.800+0800 I CONTROL  [initandlisten] MongoDB starting : pid=12452 port=27017 dbpath=D:\Programe\Test\Test_Swagger\data\db 64-bit host=LAPTOP-8UP7QVOL
+2016-11-19T22:13:45.802+0800 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2016-11-19T22:13:45.802+0800 I CONTROL  [initandlisten] db version v3.2.11
+2016-11-19T22:13:45.802+0800 I CONTROL  [initandlisten] git version: 009580ad490190ba33d1c6253ebd8d91808923e4
+2016-11-19T22:13:45.802+0800 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1t-fips  3 May 2016
+2016-11-19T22:13:45.802+0800 I CONTROL  [initandlisten] allocator: tcmalloc
+2016-11-19T22:13:45.802+0800 I CONTROL  [initandlisten] modules: none
+2016-11-19T22:13:45.802+0800 I CONTROL  [initandlisten] build environment:
+2016-11-19T22:13:45.804+0800 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
+2016-11-19T22:13:45.804+0800 I CONTROL  [initandlisten]     distarch: x86_64
+2016-11-19T22:13:45.804+0800 I CONTROL  [initandlisten]     target_arch: x86_64
+2016-11-19T22:13:45.804+0800 I CONTROL  [initandlisten] options: { config: "D:\Programe\Test\Test_Swagger\data\mongo.cfg", storage: { dbPath: "D:\Programe\Test\Test_Swagger\data\db" }, systemLog: { destination: "file", path: "D:\Programe\Test\Test_Swagger\data\log\mongo.log" } }
+2016-11-19T22:13:45.804+0800 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=8G,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2016-11-19T22:13:45.927+0800 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2016-11-19T22:13:45.927+0800 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'D:/Programe/Test/Test_Swagger/data/db/diagnostic.data'
+2016-11-19T22:13:45.952+0800 I NETWORK  [initandlisten] waiting for connections on port 27017
+2016-11-19T22:14:00.999+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:49007 #1 (1 connection now open)
+2016-11-19T22:16:03.829+0800 I NETWORK  [conn1] end connection 127.0.0.1:49007 (0 connections now open)
+2016-11-19T22:17:34.693+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:49121 #2 (1 connection now open)
+2016-11-19T22:19:34.671+0800 I NETWORK  [conn2] end connection 127.0.0.1:49121 (0 connections now open)
+2016-11-19T23:13:10.294+0800 I CONTROL  [thread1] Ctrl-C signal
+2016-11-19T23:13:10.294+0800 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
+2016-11-19T23:13:10.294+0800 I FTDC     [consoleTerminate] Shutting down full-time diagnostic data capture
+2016-11-19T23:13:10.309+0800 I CONTROL  [consoleTerminate] now exiting
+2016-11-19T23:13:10.309+0800 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2016-11-19T23:13:10.309+0800 I NETWORK  [consoleTerminate] closing listening socket: 528
+2016-11-19T23:13:10.309+0800 I NETWORK  [consoleTerminate] shutdown: going to flush diaglog...
+2016-11-19T23:13:10.309+0800 I NETWORK  [consoleTerminate] shutdown: going to close sockets...
+2016-11-19T23:13:10.310+0800 I STORAGE  [consoleTerminate] WiredTigerKVEngine shutting down
+2016-11-19T23:13:10.477+0800 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2016-11-19T23:13:10.477+0800 I CONTROL  [consoleTerminate] dbexit:  rc: 12
